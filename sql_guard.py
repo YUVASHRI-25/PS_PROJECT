@@ -38,9 +38,9 @@ def validate_sql(sql: str) -> str:
     
     # 5. Ensure safe row LIMIT
     if not re.search(r"\blimit\s+\d+\b", sql, re.I):
-        sql += " LIMIT 50"
+        sql += " LIMIT 100"
     m = re.search(r"\blimit\s+(\d+)\b", sql, re.I)
-    if m and int(m.group(1)) > 100:
-        sql = sql[:m.start(1)] + "100" + sql[m.end(1):]
+    if m and int(m.group(1)) > 500:
+        sql = sql[:m.start(1)] + "500" + sql[m.end(1):]
 
     return sql

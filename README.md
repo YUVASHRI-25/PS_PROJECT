@@ -78,7 +78,7 @@ LIMIT 10;
 That is only a wiring test; replace the subquery with a parameterized embedding generated from the user's query for actual semantic retrieval. The initial bot uses Groq + guarded SQL and does not yet use vector similarity in its answer path.
 
 ## 5. Get Groq API key
-Create an API key in the Groq console and put it in `.env` as `GROQ_API_KEY`. Do not commit `.env` or expose the key in browser/client code. You can change `GROQ_MODEL` to a model currently available to your Groq account.
+Create an API key in the Groq console and put it in `.env` as `GROQ_API_KEY`. Do not commit `.env` or expose the key in browser/client code. The default `GROQ_MODEL` is `openai/gpt-oss-120b`, Groq's replacement for the retired `llama-3.3-70b-versatile` model. You can change `GROQ_MODEL` to any model currently available to your Groq account.
 
 ## 6. Configure WhatsApp Cloud API
 In Meta for Developers:

@@ -4,3 +4,11 @@ __pycache__/
 *.pyc
 .venv/
 ps/
+frontend/node_modules/
+frontend/dist/
+package-lock.json
+ps_cleared_data/
+ps_cleared_data.sql
+.env
+.env.*
+!.env.example

@@ -30,13 +30,13 @@ function addMessage(role, text, options = [], tableData = null) {
     label.textContent = "SkillQuery assistant";
     const content = document.createElement("div");
     content.className = "answer";
-    const hasStudentTable = tableData && tableData.rows && tableData.rows.length
-      && tableData.columns && tableData.columns.includes("name");
-    if (!hasStudentTable) {
+    const hasTable = tableData && tableData.rows && tableData.rows.length && tableData.columns;
+    if (text && text.trim()) {
       renderAnswer(content, text, options.length > 0);
       body.append(label, content);
     }
-    if (hasStudentTable) {
+    if (hasTable) {
+      if (!body.contains(label)) body.append(label);
       body.appendChild(createTable(tableData.columns, tableData.rows));
     }
     if (options.length) {
